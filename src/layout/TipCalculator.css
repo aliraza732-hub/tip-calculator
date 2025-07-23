@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* root */
+:root {
+    --Strong-cyan: #26c0ab;    
+    --Very-dark-cyan: #00494d;
+    --Dark-grayish-cyan: #5e7a7d;
+    --Grayish-cyan: #7f9c9f;
+    --Light-grayish-cyan: #c5e4e7;
+    --Very-light-grayish-cyan: #f4fafa;
+    --White: #ffffff;
+
+    --ff: "Space mono", sans-serif;
+    --fw-700: 700;
+    --fs-input: 1.5rem;
+    --fs-base: 1rem;
+}
+
+
+/* reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+button {
+    color: var(--White);
+    width: 100%;
+    display: inline-block;
+    background: var(--Very-dark-cyan);
+    padding: 1rem;
+    border: none;
+    transition: .2s ease-in background;
+}
+
+input[type="number"] {
+    text-align: right;
+    color: var(--Very-dark-cyan);
+    display: inline-block;
+    width: 100%;
+    padding: 1rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid var(--Strong-cyan);
+    background-color: var(--Very-light-grayish-cyan) !important;
+}
+
+#customInput {
+    margin: 0;
+}
+
+input, button {
+    font: inherit;
+    font-size: var(--fs-input);
+    border-radius: .2rem;
+}
+
+body {
+    font-family: var(--ff);
+    font-weight: var(--fw-700);
+    font-size: var(--fs-base);
+    color: var(--Very-dark-cyan);
+    padding: 4rem 0;
+    background: var(--Light-grayish-cyan);
+}
+
+
+/* helper classes */
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* typography/text styles */
+.title {
+    text-align: center;
+    line-height: 1;
+    letter-spacing: 8px;
+    margin: 0 0 2rem;
+}
+
+label {
+    display: inline-block;
+    color: var(--Dark-grayish-cyan);
+    margin-bottom: 1rem;
+}
+
+.total-amount, .total-amount-person {
+    color: var(--Strong-cyan);
+    font-size: 2rem;
+}
+
+small {
+    color: var(--Dark-grayish-cyan);
+}
+
+.error {
+    color: rgb(185, 122, 39);
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.error.active {
+    display: block;
+}
+
+.error-container {
+    justify-content: space-between;
+}
+
+#peopleInput.error-active {
+    border-color:  rgb(185, 122, 39);
+}
+
+
+/* ui elements */
+#billInput {
+    background: url(images/icon-dollar.svg) no-repeat;
+    background-position: 4% 50%;
+}
+
+#peopleInput {
+    background: url(images/icon-person.svg) no-repeat;
+    background-position: 4% 50%;
+}
+
+.reset-btn {
+    text-transform: uppercase;
+    color: var(--Very-dark-cyan);
+    opacity: 40%;
+    transition: .2s ease opacity;
+    background: var(--Strong-cyan);
+}
+
+.reset-btn:hover {
+    opacity: 100%;
+}
+
+.select-tip-button:hover {
+    background: var(--Strong-cyan);
+}
+
+
+
+/* layout styles */
+.tip-container {
+    gap: 2rem;
+    padding: 1.75rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background: var(--White);
+}
+
+.select-buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+
+.total-container {
+    gap: 3rem;
+    color: var(--White);
+    padding: 1.75rem;
+    border-radius: 1rem;
+    background: var(--Very-dark-cyan);
+}
+
+.small-total {
+    justify-content: space-between;
+}
+
+.small-total:nth-of-type(2) {
+    margin-top: 2rem;
+}
+
+.result-box {
+    align-items: initial;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+
+
+/* media query */
+@media screen and (min-width: 650px) {
+    .tip-container {
+        max-width: 60rem;
+        margin-inline: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .select-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .tip-container {
+        border-radius: 2rem;
+    }
+    
+}
